@@ -1,5 +1,6 @@
 package br.com.aula.projetoCadastroUsuario.model;
 
+import br.com.aula.projetoCadastroUsuario.dto.UsuarioDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -54,6 +55,13 @@ import java.time.LocalDateTime;
             this.dataCriacao = LocalDateTime.now();
             this.dataAtualizacao = LocalDateTime.now();
         }
+    public UsuarioModel(UsuarioDTO dto, String senhaHash) {
+        this.nome = dto.getNome();
+        this.nomeUsuario = dto.getNomeUsuario();
+        this.email = dto.getEmail();
+        this.senha = senhaHash;
+        this.telefoneCelular = dto.getTelefoneCelular();
+    }
 
         // Getters e Setters
         public Long getId() {

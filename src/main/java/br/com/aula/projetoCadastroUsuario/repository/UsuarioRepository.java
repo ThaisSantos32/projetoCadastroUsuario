@@ -1,4 +1,13 @@
 package br.com.aula.projetoCadastroUsuario.repository;
 
-public class UsuarioRepository {
+
+import br.com.aula.projetoCadastroUsuario.model.UsuarioModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UsuarioRepository extends JpaRepository<UsuarioModel, Long> {
+    boolean existsByEmail(String email);
+
+    boolean existsByNomeUsuario(String nomeUsuario);
 }
