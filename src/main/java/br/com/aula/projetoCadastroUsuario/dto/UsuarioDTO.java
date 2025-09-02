@@ -24,11 +24,11 @@ public class UsuarioDTO {
     @Pattern(regexp = "^\\d+$")
     private String telefoneCelular;
 
-    // Construtor padrão
+
     public UsuarioDTO() {
     }
 
-    // Getters e Setters (mantemos os mesmos)
+
     public String getNome() {
         return nome;
     }
