@@ -63,7 +63,6 @@ import java.time.LocalDateTime;
         this.telefoneCelular = dto.getTelefoneCelular();
     }
 
-        // Getters e Setters
         public Long getId() {
             return id;
         }

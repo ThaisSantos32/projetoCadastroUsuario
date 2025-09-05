@@ -1,6 +1,7 @@
 package br.com.aula.projetoCadastroUsuario.service;
 
 import br.com.aula.projetoCadastroUsuario.dto.UsuarioDTO;
+import br.com.aula.projetoCadastroUsuario.exception.CriacaoUsuarioException;
 import br.com.aula.projetoCadastroUsuario.model.UsuarioModel;
 import br.com.aula.projetoCadastroUsuario.repository.UsuarioRepository;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -16,13 +17,11 @@ public class UsuarioService {
     }
 
     public UsuarioModel criarUsuario(UsuarioDTO dto) {
-        // 2. Validar duplicidade por email
         if (usuarioRepository.existsByEmail(dto.getEmail())) {
-            throw new IllegalArgumentException("Já existe um usuário com este email");
+            throw new CriacaoUsuarioException("Já existe um usuário com este email");
         }
-
         if (usuarioRepository.existsByNomeUsuario(dto.getNomeUsuario())) {
-            throw new IllegalArgumentException("Já existe um usuário com este nome de usuário");
+            throw new CriacaoUsuarioException("Já existe um usuário com este nome de usuário");
         }
 
         String senhaHash = BCrypt.hashpw(dto.getSenha(), BCrypt.gensalt());

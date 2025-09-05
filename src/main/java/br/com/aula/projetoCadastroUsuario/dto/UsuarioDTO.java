@@ -17,18 +17,17 @@ public class UsuarioDTO {
     private String email;
 
     @NotBlank
-    @Pattern(regexp = "^(?=.*[\\d\\W]).+$")
+    @Pattern(regexp = "^(?=.*[\\d\\W]).+$", message = "A senha deve conter pelo menos um número ou um caractere especial")
     private String senha;
 
     @NotBlank
-    @Pattern(regexp = "^\\d+$")
+    @Pattern(regexp = "^\\d+$", message= "O telefone celular deve conter apenas dígitos")
     private String telefoneCelular;
 
-    // Construtor padrão
+
     public UsuarioDTO() {
     }
 
-    // Getters e Setters (mantemos os mesmos)
     public String getNome() {
         return nome;
     }

@@ -24,12 +24,7 @@ public class UsuarioController {
 
     @PostMapping
     public ResponseEntity<UsuarioModel> criarUsuario(@RequestBody @Valid UsuarioDTO dto) {
-        try {
             UsuarioModel novoUsuario = usuarioService.criarUsuario(dto);
             return ResponseEntity.status(HttpStatus.CREATED).body(novoUsuario);
-
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-}
