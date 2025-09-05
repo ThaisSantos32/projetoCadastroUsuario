@@ -1,7 +1,6 @@
 package br.com.aula.projetoCadastroUsuario.service;
 
 import br.com.aula.projetoCadastroUsuario.dto.UsuarioDTO;
-import br.com.aula.projetoCadastroUsuario.exception.CriacaoUsuarioException;
 import br.com.aula.projetoCadastroUsuario.model.UsuarioModel;
 import br.com.aula.projetoCadastroUsuario.repository.UsuarioRepository;
 import org.springframework.security.crypto.bcrypt.BCrypt;
