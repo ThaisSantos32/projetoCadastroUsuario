@@ -27,7 +27,6 @@ public class UsuarioDTO {
 
     public UsuarioDTO() {
     }
-
     public String getNome() {
         return nome;
     }

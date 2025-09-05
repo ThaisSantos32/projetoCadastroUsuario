@@ -62,7 +62,6 @@ import java.time.LocalDateTime;
         this.senha = senhaHash;
         this.telefoneCelular = dto.getTelefoneCelular();
     }
-
         public Long getId() {
             return id;
         }

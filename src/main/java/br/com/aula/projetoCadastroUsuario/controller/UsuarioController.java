@@ -28,3 +28,4 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.CREATED).body(novoUsuario);
         }
     }
+
